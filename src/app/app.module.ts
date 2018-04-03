@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { DatapointEntryComponent } from './datapoint-entry/datapoint-entry.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DatapointEntryComponent
   ],
   imports: [
     BrowserModule
