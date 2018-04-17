@@ -1,3 +1,20 @@
-<p>
-  new-metric works!
-</p>
+<form class="w-full max-w-xs text-xl bg-grey-lightest p-4 shadow-md">
+  <div class="md:flex md:items-center mb-6" *ngFor="let datapoint of numberOfEntries">
+    <label>Name: </label>
+    <input id="{{datapoint}} name" class="md:w-2/3 bg-grey-lighter border-b-2 p-0 h-10 w-64 text-center" />
+    <label>Input Type: </label>
+    <input id="{{datapoint}} inputType" class="md:w-2/3 bg-grey-lighter border-b-2 p-0 h-10 w-64 text-center" />
+    <label>Unit: </label>
+    <input id="{{datapoint}} unit" class="md:w-2/3 bg-grey-lighter border-b-2 p-0 h-10 w-64 text-center" />
+    <button type="button" (click)="removeDatapoint(datapoint)">Remove</button>
+  </div>
+
+  <div class="md:flex md:items-center mb-2">
+    <div class="md:w-1/3">
+      <button type="button" (click)="addDatapoint()">Add</button>
+    </div>
+    <div class="md:w-2/3">
+      <input type="button" value="Submit" class="bg-grey-dark text-white p-2 rounded hover:bg-grey-darker cursor-pointer">
+    </div>
+  </div>
+</form>

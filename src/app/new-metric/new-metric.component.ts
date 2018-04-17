@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-new-metric',
   templateUrl: './new-metric.component.html',
   styleUrls: ['./new-metric.component.scss']
 })
-export class NewMetricComponent implements OnInit {
+export class NewMetricComponent {
 
-  constructor() { }
+  numberOfEntries = Array(5).map((x, i) => i);
 
-  ngOnInit() {
+  removeDatapoint(datapoint: number) {
+      this.numberOfEntries.splice(datapoint, 1);
   }
 
+  addDatapoint() {
+    const length = this.numberOfEntries.length;
+    this.numberOfEntries.push(length);
+  }
 }
