@@ -1,4 +1,5 @@
 <form class="w-full max-w-xs text-xl bg-grey-lightest p-4 shadow-md">
+  <input type="number" (change)="updateNumberOfEntries($event)"/>
   <div class="md:flex md:items-center mb-6" *ngFor="let datapoint of numberOfEntries">
     <label>Name: </label>
     <input id="{{datapoint}} name" class="md:w-2/3 bg-grey-lighter border-b-2 p-0 h-10 w-64 text-center" />

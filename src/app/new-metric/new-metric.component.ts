@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NewMetricComponent {
 
-  numberOfEntries = Array(5).map((x, i) => i);
+  numberOfEntries = Array(0).map((x, i) => i);
 
   removeDatapoint(datapoint: number) {
       this.numberOfEntries.splice(datapoint, 1);
@@ -16,5 +16,10 @@ export class NewMetricComponent {
   addDatapoint() {
     const length = this.numberOfEntries.length;
     this.numberOfEntries.push(length);
+  }
+
+  updateNumberOfEntries(event) {
+    const newNumOfEntries: number = +event.srcElement.value;
+    this.numberOfEntries = Array(newNumOfEntries).map((x, i) => i);
   }
 }
