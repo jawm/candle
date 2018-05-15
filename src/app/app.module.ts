@@ -3,23 +3,26 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AuthService } from './auth.service';
 import { DatapointEntryComponent } from './datapoint-entry/datapoint-entry.component';
 import { NewMetricComponent } from './new-metric/new-metric.component';
-import {RouterModule} from '@angular/router';
-import {ROUTES} from './routes';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './routes';
+import { CallbackComponent } from './callback/callback.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DatapointEntryComponent,
-    NewMetricComponent
+    NewMetricComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES, {useHash: true})
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

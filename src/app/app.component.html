@@ -6,6 +6,8 @@
     </div>
   </header>
 </div>
+<button *ngIf="authService.isLoggedIn" (click)="authService.logout()">Logout</button>
+<button *ngIf="!authService.isLoggedIn" (click)="authService.login()">Login</button>
 <main class="absolute">
   <router-outlet></router-outlet>
 </main>
