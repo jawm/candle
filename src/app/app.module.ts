@@ -9,6 +9,7 @@ import { NewMetricComponent } from './new-metric/new-metric.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './routes';
 import { CallbackComponent } from './callback/callback.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CallbackComponent } from './callback/callback.component';
     AppComponent,
     DatapointEntryComponent,
     NewMetricComponent,
-    CallbackComponent
+    CallbackComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,

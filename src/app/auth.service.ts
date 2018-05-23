@@ -17,30 +17,31 @@ export class AuthService {
     audience: environment.auth.audience,
     scope: environment.auth.scope
   });
-  // Store authentication data
+
   userProfile: any;
   accessToken: string;
   authenticated: boolean;
 
   constructor(private router: Router) {
-    // Check session to restore login if not expired
     if (Date.now() < JSON.parse(localStorage.getItem('expires_at'))) {
       this.getAccessToken();
     }
   }
 
   login() {
-    // Auth0 authorize request
+    // Opens auth0 authentication portal
     this.auth0.authorize();
   }
 
   handleLoginCallback() {
     // When Auth0 hash parsed, get profile
-    console.log('allo allo allo');
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken) {
         window.location.hash = '';
         this.getUserInfo(authResult);
+
+        // go to backend and verify token, then redirect to requested page
+
       } else if (err) {
         console.error(`Error: ${err.error}`);
       }
