@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "tailwind": "./node_modules/.bin/tailwind build ./src/tailwind-build.scss -c ./tailwind.js -o ./src/styles.scss",
+    "tailwind": "./node_modules/.bin/tailwind build ./src/tailwind-build.scss -c ./tailwind-config.js -o ./src/styles.scss",
     "prestart": "npm run tailwind"
   },
   "private": true,

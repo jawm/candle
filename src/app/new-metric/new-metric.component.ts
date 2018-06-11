@@ -17,9 +17,4 @@ export class NewMetricComponent {
     const length = this.numberOfEntries.length;
     this.numberOfEntries.push(length);
   }
-
-  updateNumberOfEntries(event) {
-    const newNumOfEntries: number = +event.srcElement.value;
-    this.numberOfEntries = Array(newNumOfEntries).map((x, i) => i);
-  }
 }
