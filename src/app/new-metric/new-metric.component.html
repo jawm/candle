@@ -1,4 +1,5 @@
 <form class="w-full max-w-xs text-xl bg-grey-lightest p-4 shadow-md">
+  <hr class="h-rule">
   <div class="md:flex md:items-center mb-6 flex-col" *ngFor="let datapoint of numberOfEntries">
     <div class="flex flex-row w-64 mb-4">
       <label class="mr-4 w-24">Name: </label>
@@ -12,9 +13,9 @@
       <label class="mr-4 w-24">Unit: </label>
       <input id="{{datapoint}} unit" class="md:w-2/3 bg-grey-lighter border-b-2 p-0 h-10 w-64 text-center" />
     </div>
-    <button hidden="" type="button" class="bg-red-dark text-white p-2 rounded hover:bg-red-darker cursor-pointer" (click)="removeDatapoint(datapoint)">Remove</button>
-    <br>
-    <hr/>
+    <button type="button" class="bg-red-dark text-white p-2 rounded hover:bg-red-darker cursor-pointer"
+            (click)="removeDatapoint(datapoint)">Remove</button>
+    <hr class="h-rule">
   </div>
 
   <div class="md:flex md:items-center mb-2">
